@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "mapping.bloblang.injection",
+  "injectionSelector": "L:source.yaml",
+  "patterns": [
+    {
+      "comment": "Embedded Bloblang mapping",
+      "begin": "^([ ]+)(?! )(#!blobl)",
+      "end": "^(?!\\1|\\s*$)",
+      "beginCaptures": {
+        "2": { "name": "punctuation.definition.comment.bloblang" }
+      },
+      "contentName": "meta.embedded.inline.bloblang",
+      "patterns": [{ "include": "source.bloblang" }]
+    },
+    {
+      "comment": "Bloblang interpolations: '${! <expression> }'",
+      "name": "meta.embedded.interpolation.bloblang",
+      "begin": "\\$\\{!",
+      "end": "\\}",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.interpolation.begin.bloblang" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.interpolation.end.bloblang" }
+      },
+      "patterns": [{ "include": "source.bloblang#expressions" }]
+    },
+    {
+      "comment": "Environment variable interpolations: '${KEYWORD:default?}'",
+      "match": "(\\$\\{)\\s*(\\w+)(?:(:)(.+?))?\\s*(\\})",
+      "name": "meta.embedded.envvar.bloblang",
+      "captures": {
+        "1": { "name": "punctuation.definition.envvar.begin.bloblang" },
+        "2": { "name": "variable.name.envvar.bloblang" },
+        "3": { "name": "keyword.operator.defaultenvvar.bloblang" },
+        "4": { "name": "constant.other.defaultenvvar.bloblang" },
+        "5": { "name": "punctuation.definition.envvar.end.bloblang" }
+      }
+    }
+  ]
+}
