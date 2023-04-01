@@ -1,0 +1,52 @@
+{
+  "name": "vscode-benthos",
+  "displayName": "vscode-benthos",
+  "description": "Benthos and bloblang support in VS Code",
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "bloblang",
+        "aliases": [
+          "Bloblang",
+          "bloblang"
+        ],
+        "extensions": [
+          ".blobl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "bloblang",
+        "scopeName": "source.bloblang",
+        "path": "./syntaxes/bloblang.tmLanguage.json"
+      },
+      {
+        "injectTo": [
+          "source.yaml"
+        ],
+        "path": "./syntaxes/interpolations.tmLanguage.json",
+        "scopeName": "interpolation.bloblang.injection"
+      },
+      {
+        "injectTo": [
+          "source.yaml"
+        ],
+        "path": "./syntaxes/yamlmappings.tmLanguage.json",
+        "scopeName": "mapping.bloblang.injection",
+        "embeddedLanguages": {
+          "meta.embedded.block.bloblang": "bloblang"
+        }
+      }
+    ]
+  }
+}
