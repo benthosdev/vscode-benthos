@@ -48,6 +48,10 @@
         {
           "name": "variable.name.reference.bloblang",
           "match": "\\$\\w+\\b"
+        },
+        {
+          "name": "variable.name.meta.bloblang",
+          "match": "@(?:\\w+\\b)?"
         }
       ]
     },
