@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "mapping.bloblang.injection",
+  "injectionSelector": "L:source.yaml",
+  "patterns": [
+    {
+      "comment": "Embedded Bloblang mapping",
+      "begin": "^([ ]+)(?! )(#!blobl)",
+      "end": "^(?!\\1|\\s*$)",
+      "beginCaptures": {
+        "2": { "name": "punctuation.definition.comment.bloblang" }
+      },
+      "contentName": "meta.embedded.inline.bloblang",
+      "patterns": [{ "include": "source.bloblang" }]
+    }
+  ]
+}

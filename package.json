@@ -41,7 +41,14 @@
         "injectTo": [
           "source.yaml"
         ],
-        "path": "./syntaxes/yaml.tmLanguage.json",
+        "path": "./syntaxes/yaml-interpolations.tmLanguage.json",
+        "scopeName": "interpolation.bloblang.injection"
+      },
+      {
+        "injectTo": [
+          "source.yaml"
+        ],
+        "path": "./syntaxes/yaml-mappings.tmLanguage.json",
         "scopeName": "mapping.bloblang.injection",
         "embeddedLanguages": {
           "meta.embedded.inline.bloblang": "bloblang"
