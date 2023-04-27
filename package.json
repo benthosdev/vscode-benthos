@@ -51,7 +51,8 @@
         "path": "./syntaxes/yaml-mappings.tmLanguage.json",
         "scopeName": "mapping.bloblang.injection",
         "embeddedLanguages": {
-          "meta.embedded.inline.bloblang": "bloblang"
+          "meta.embedded.inline.blobl.bloblang": "bloblang",
+          "meta.embedded.block.javascript": "javascript"
         }
       }
     ]

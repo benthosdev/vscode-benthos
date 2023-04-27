@@ -12,6 +12,20 @@
       },
       "contentName": "meta.embedded.inline.bloblang",
       "patterns": [{ "include": "source.bloblang" }]
+    },
+    {
+      "comment": "Embedded JavaScript mapping",
+      "begin": "^([ ]+)(?! )(//!js)",
+      "end": "^(?!\\1|\\s*$)",
+      "beginCaptures": {
+        "2": { "name": "punctuation.definition.comment.bloblang" }
+      },
+      "contentName": "meta.embedded.block.javascript",
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
     }
   ]
 }
