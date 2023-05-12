@@ -180,6 +180,14 @@
             "1": { "name": "keyword.declaration.bloblang" },
             "2": { "name": "variable.name.bloblang" }
           }
+        },
+        {
+          "comment": "Metadata assignment",
+          "match": "\\b(meta)\\b",
+          "name": "meta.declaration.bloblang",
+          "captures": {
+            "1": { "name": "keyword.declaration.bloblang" }
+          }
         }
       ]
     },
